@@ -5,6 +5,7 @@
 // 依赖：ai @ai-sdk/deepseek zod
 // 启动：npx tsx codeY.ts
 
+import 'dotenv/config'
 import { deepseek } from '@ai-sdk/deepseek'
 import { streamText, stepCountIs, tool } from 'ai'
 import { z } from 'zod'
