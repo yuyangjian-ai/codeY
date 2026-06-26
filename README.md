@@ -72,29 +72,6 @@ codeY
 
 `npm link` 会把当前项目注册到 npm 全局命令目录。之后终端执行 `codeY` 时，会启动这个项目的 CLI。
 
-## 使用示例
-
-![codeY 演示](docs/demo.gif)
-
-```text
-你: 帮我看看 package.json 里有哪些依赖
-助手:
-  [调用 readFile({"path":"package.json"})]
-  [返回 487 字节]
-助手: 你的 package.json 里有以下依赖：
-- ai
-- @ai-sdk/deepseek
-- zod
-...
-
-你: 这个项目的 main 字段是什么？
-助手: 你的 package.json 里没有显式声明 `main` 字段——npm 会默认 fallback 到 `index.js`。
-
-你: exit
-```
-
-模型会自己决定要不要调 `readFile`、调几次、什么时候开始回答——这就是 agent 的核心循环。
-
 ## 这 50 行做了什么
 
 | 代码片段 | 做的事 |
