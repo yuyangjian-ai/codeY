@@ -3,14 +3,21 @@
 // 50 行跑通：streamText + 一个 readFile 工具 + 多轮对话循环。
 //
 // 依赖：ai @ai-sdk/deepseek zod
-// 启动：npx tsx codeY.ts
+// 启动：npm start 或 codeY
 
-import 'dotenv/config';
 import { deepseek } from '@ai-sdk/deepseek';
+import dotenv from 'dotenv';
 import { streamText, stepCountIs, tool } from 'ai';
 import { z } from 'zod';
 import fs from 'node:fs/promises';
+import path from 'node:path';
 import readline from 'node:readline';
+import { fileURLToPath } from 'node:url';
+
+const entryDir = path.dirname(fileURLToPath(import.meta.url));
+
+dotenv.config({ quiet: true });
+dotenv.config({ path: path.join(entryDir, '.env'), quiet: true });
 
 // 给模型一个工具：读取一个文件的全部内容
 const readFile = tool({

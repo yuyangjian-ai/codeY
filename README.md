@@ -16,7 +16,7 @@
 ### 1. 装依赖
 
 ```bash
-git clone <your-repo-url> codeY
+git clone https://github.com/yuyangjian-ai/codeY.git
 cd codeY
 npm install
 ```
@@ -54,12 +54,23 @@ cp .env.example .env
 # 编辑 .env 填入你的 key
 ```
 
-### 3. 启动
+### 3. 启动方式一：项目内启动
 
 ```bash
 npm start
 # 等同于：npx tsx codeY.ts
 ```
+
+### 4. 启动方式二：注册为命令行工具
+
+如果你希望在任意目录直接输入 `codeY` 启动，可以执行：
+
+```bash
+npm link
+codeY
+```
+
+`npm link` 会把当前项目注册到 npm 全局命令目录。之后终端执行 `codeY` 时，会启动这个项目的 CLI。
 
 ## 使用示例
 

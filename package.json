@@ -4,6 +4,9 @@
   "description": "50 行跑通一个最小 AI agent",
   "type": "module",
   "private": true,
+  "bin": {
+    "codeY": "./bin/codeY.js"
+  },
   "scripts": {
     "start": "tsx codeY.ts"
   },
